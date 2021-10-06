@@ -48,11 +48,8 @@ jobs:
         env:
           GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
         run: |
-          npx asp update beta
+          npx asp update ${{ steps.extract_branch.outputs.branch }}
           git status
           git add -A
           git commit -m 'update deps'
           git push
-#          asp update ${{ steps.extract_branch.outputs.branch }}
-
-

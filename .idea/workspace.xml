@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c24ed5c0-3967-47f9-bf3a-a072e216b85f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/actions/platform-deps-update/action.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/actions/platform-deps-update/dist/commonjs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/asp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/command-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/checkout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/clone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/current-branches.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/exec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/git-to-ver.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/link-by-yarn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/link.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/locale-audit-app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/locale-audit-file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/status.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/commands/update.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/bin/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/child-process.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/child-process.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/git.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/npm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/lib/repos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/platform-cli/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
