@@ -1,0 +1,33 @@
+{
+  "name": "@airslate/platform-cli",
+  "version": "1.14.2",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/airslateinc/front-platform.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "asp": "bin/asp.js"
+  },
+  "scripts": {
+    "lint": "eslint ./"
+  },
+  "dependencies": {
+    "find-up": "^4.1.0",
+    "finddown-sync": "^1.0.2",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.1",
+    "p-queue": "^6.3.0",
+    "parse-duration": "^0.4.4",
+    "s-ago": "^2.2.0",
+    "terminal-kit": "^1.33.15",
+    "yargs": "^15.3.1"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.infrateam.xyz/api/npm/npm/"
+  },
+  "gitHead": "be0f28c62e92e891eba04066b9bd33ca45a5c542"
+}
