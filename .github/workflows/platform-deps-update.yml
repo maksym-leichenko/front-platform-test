@@ -49,6 +49,5 @@ jobs:
           GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
         run: |
           npx asp update ${{ steps.extract_branch.outputs.branch }}
-          git diff-index HEAD || (git commit -a -m 'update deps')
-          git push
+          git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
 
