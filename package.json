@@ -23,7 +23,7 @@
   ],
   "homepage": "https://github.com/maksym-leichenko/front-platform-test#readme",
   "dependencies": {
-    "front-platform-repo-a": "1.6.0",
+    "front-platform-repo-a": "1.7.0",
     "front-platform-repo-b": "^1.0.0"
   }
 }
