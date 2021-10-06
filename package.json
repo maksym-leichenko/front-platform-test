@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/maksym-leichenko/front-platform-test/issues"
   },
-  "homepage": "https://github.com/maksym-leichenko/front-platform-test#readme"
+  "homepage": "https://github.com/maksym-leichenko/front-platform-test#readme",
+  "dependencies": {
+    "front-platform-repo-a": "^1.0.0",
+    "front-platform-repo-b": "^1.0.0"
+  }
 }
