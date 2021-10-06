@@ -232,10 +232,10 @@ for-own@^0.1.4:
   dependencies:
     for-in "^1.0.1"
 
-front-platform-repo-a@1.1.0:
-  version "1.1.0"
-  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-a/-/front-platform-repo-a-1.1.0.tgz#3e8c8b227b1abb0ccfa43d10896cd4118d7d5417"
-  integrity sha1-PoyLInsauwzPpD0QiWzUEY19VBc=
+front-platform-repo-a@1.6.0:
+  version "1.6.0"
+  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-a/-/front-platform-repo-a-1.6.0.tgz#97991c1c98141462aa74806eba8336d920cecd6a"
+  integrity sha1-l5kcHJgUFGKqdIBuuoM22SDOzWo=
 
 front-platform-repo-b@^1.0.0:
   version "1.0.0"
