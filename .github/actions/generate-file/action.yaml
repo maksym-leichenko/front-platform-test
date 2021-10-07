@@ -1,5 +1,0 @@
-name: 'Platform Deps Update'
-description: 'Platform Deps Update'
-runs:
-  using: 'node12'
-  main: 'dist/commonjs/index.js'

@@ -28,12 +28,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: ./.github/actions/generate-file
-        name: generate-file
-        if: ${{ github.event.label.name == 'generate-file' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/checkout@v2
         if: ${{ github.event.label.name == 'generate-file' }}
         with:
@@ -44,6 +38,6 @@ jobs:
         env:
           GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
         run: |
-          git commit -a -m 'update deps'
+          git commit --allow-empty -m 'update deps'
           git push
 
