@@ -1,0 +1,54 @@
+name: Platform Deps Update
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: 'Runner'
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set git user
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        uses: fregante/setup-git-user@v1
+
+      - uses: actions-ecosystem/action-remove-labels@v1
+        name: Delete pull request label
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: platform-deps-update
+
+      - uses: ./.github/actions/platform-deps-update
+        name: Get current branch
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        id: extract_branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup NPM Registry
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        run: |
+          npm config set registry https://artifactory.infrateam.xyz/api/npm/npm/
+          echo "//artifactory.infrateam.xyz/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
+      - uses: actions/checkout@v2
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        with:
+          ref: ${{ steps.extract_branch.outputs.branch }}
+
+      - name: Install Dependencies
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        run: yarn install --frozen-lockfile --silent
+
+      - name: Update front-platform deps
+        if: ${{ github.event.label.name == 'platform-deps-update' }}
+        env:
+          GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
+        run: |
+          npx asp update ${{ steps.extract_branch.outputs.branch }}
+          git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
+          git push
+

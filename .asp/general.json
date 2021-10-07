@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "front-platform-repo-a": {
+      "packageName": "front-platform-repo-a",
+      "sshUrl": "git@github.com:maksym-leichenko/front-platform-repo-a.git"
+    },
+    "front-platform-repo-b": {
+      "packageName": "front-platform-repo-b",
+      "sshUrl": "git@github.com:maksym-leichenko/front-platform-repo-b.git"
+    }
+  },
+  "repoDir": "repos"
+}
