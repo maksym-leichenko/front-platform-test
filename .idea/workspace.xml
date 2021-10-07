@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c24ed5c0-3967-47f9-bf3a-a072e216b85f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.github/actions/generate-file/dist/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/generate-file/dist/commonjs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/generate-file.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/generate-file.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
