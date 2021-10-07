@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: ./.github/actions/generate-file
-        name: Get current branch
+        name: generate-file
         if: ${{ github.event.label.name == 'generate-file' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,6 +44,6 @@ jobs:
         env:
           GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
         run: |
-          git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
+          git commit -a -m 'update deps'
           git push
 

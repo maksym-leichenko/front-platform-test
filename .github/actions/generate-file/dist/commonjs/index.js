@@ -9,10 +9,9 @@ var fs__default = /*#__PURE__*/_interopDefaultLegacy(fs);
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 
-fs__default['default'].writeFileSync('test.json', JSON.stringify(Math.random() * 1000), { flag: 'w' });
-
-// (async function run() {
-// }());
+(async function run() {
+    fs__default['default'].writeFileSync('test.json', JSON.stringify(Math.random() * 1000), { flag: 'w' });
+}());
 
 var src = {
 

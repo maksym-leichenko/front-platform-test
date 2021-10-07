@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c24ed5c0-3967-47f9-bf3a-a072e216b85f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/actions/generate-file/dist/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/generate-file/dist/commonjs/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/generate-file.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/generate-file.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,5 +71,9 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state x="648" y="207" key="git4idea.branch.GitSmartOperationDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1633599171601" />
+    <state x="561" y="269" width="670" height="676" key="search.everywhere.popup" timestamp="1633601079742">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="561" y="269" width="670" height="676" key="search.everywhere.popup/0.25.1792.1095@0.25.1792.1095" timestamp="1633601079742" />
   </component>
 </project>
