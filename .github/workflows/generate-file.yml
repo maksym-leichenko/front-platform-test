@@ -24,14 +24,13 @@ jobs:
       - uses: ./.github/actions/platform-deps-update
         name: Get current branch
         if: ${{ github.event.label.name == 'generate-file' }}
-        id: extract_branch
+        id: extract_branch_2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: ./.github/actions/generate-file
         name: Get current branch
         if: ${{ github.event.label.name == 'generate-file' }}
-        id: extract_branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
