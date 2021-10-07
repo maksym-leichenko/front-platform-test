@@ -237,10 +237,10 @@ front-platform-repo-a@1.8.0:
   resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-a/-/front-platform-repo-a-1.8.0.tgz#513c71ab1d2a25a737314dcb6b4099fd3db6fe99"
   integrity sha1-UTxxqx0qJac3MU3La0CZ/T22/pk=
 
-front-platform-repo-b@1.1.2:
-  version "1.1.2"
-  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-b/-/front-platform-repo-b-1.1.2.tgz#9bd5a4f425bc20e7a6b38d9b9f477e8bdbbc9bad"
-  integrity sha1-m9Wk9CW8IOems42bn0d+i9u8m60=
+front-platform-repo-b@1.1.3:
+  version "1.1.3"
+  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-b/-/front-platform-repo-b-1.1.3.tgz#7c8383172338232566ce8cadae5c6536b290e62b"
+  integrity sha1-fIODFyM4IyVmzoytrlxlNrKQ5is=
 
 fs-exists-sync@^0.1.0:
   version "0.1.0"
