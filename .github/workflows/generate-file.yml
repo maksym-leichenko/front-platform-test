@@ -1,0 +1,43 @@
+name: GENERATE CHANGES
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: 'Runner'
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set git user
+        if: ${{ github.event.label.name == 'generate-file' }}
+        uses: fregante/setup-git-user@v1
+
+      - uses: actions-ecosystem/action-remove-labels@v1
+        name: Delete pull request label
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: generate-file
+
+      - uses: ./.github/actions/platform-deps-update
+        name: Get current branch
+        if: ${{ github.event.label.name == 'generate-file' }}
+        id: extract_branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@v2
+        if: ${{ github.event.label.name == 'generate-file' }}
+        with:
+          ref: ${{ steps.extract_branch.outputs.branch }}
+
+      - name: Update front-platform deps
+        if: ${{ github.event.label.name == 'generate-file' }}
+        env:
+          GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
+        run: |
+          git commit --allow-empty -m 'update deps'
+          git push
+
