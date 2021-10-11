@@ -6293,5 +6293,5 @@ var github$2 = /*#__PURE__*/Object.freeze({
 const { context } = github$2;
 
 (function run() {
-  core_14('branch', context.payload.pull_request.head.ref);
+  core_14('branch', context.payload.pull_request.head.ref.replace('/', '-'));
 }());
