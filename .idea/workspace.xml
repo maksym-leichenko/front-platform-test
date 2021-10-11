@@ -31,8 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c24ed5c0-3967-47f9-bf3a-a072e216b85f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release/arel-00" />
+        <entry key="$PROJECT_DIR$" value="release/arel-11" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633507243942</updated>
       <workItem from="1633507245261" duration="139000" />
-      <workItem from="1633940518193" duration="1857000" />
+      <workItem from="1633940518193" duration="3348000" />
     </task>
     <servers />
   </component>
