@@ -48,7 +48,7 @@ jobs:
         env:
           GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
         run: |
-          npx asp update ${{ steps.extract_branch.outputs.branch }}
+          npx asp update ${{ steps.extract_branch.outputs.releaseTag }}
           git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
           git push
 
