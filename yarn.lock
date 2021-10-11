@@ -232,15 +232,15 @@ for-own@^0.1.4:
   dependencies:
     for-in "^1.0.1"
 
-front-platform-repo-a@1.9.0:
-  version "1.9.0"
-  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-a/-/front-platform-repo-a-1.9.0.tgz#b87636372ebf868267608ee71019cdd1c9b57454"
-  integrity sha1-uHY2Ny6/hoJnYI7nEBnN0cm1dFQ=
+front-platform-repo-a@1.10.1:
+  version "1.10.1"
+  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-a/-/front-platform-repo-a-1.10.1.tgz#6485be2ded19d204a62cde5889dcedad5ecfe510"
+  integrity sha1-ZIW+Le0Z0gSmLN5YidztrV7P5RA=
 
-front-platform-repo-b@1.1.5:
-  version "1.1.5"
-  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-b/-/front-platform-repo-b-1.1.5.tgz#7f5e4e7a561149b98490ceda9671af9948266c55"
-  integrity sha1-f15OelYRSbmEkM7alnGvmUgmbFU=
+front-platform-repo-b@1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.infrateam.xyz:443/api/npm/npm/front-platform-repo-b/-/front-platform-repo-b-1.2.0.tgz#4348892d793d195f077fe893908bb532d0456c59"
+  integrity sha1-Q0iJLXk9GV8Hf+iTkIu1MtBFbFk=
 
 fs-exists-sync@^0.1.0:
   version "0.1.0"
