@@ -6293,6 +6293,8 @@ var github$2 = /*#__PURE__*/Object.freeze({
 const { context } = github$2;
 
 (function run() {
+  console.log('----> branch', context.payload.pull_request.head.ref);
+  console.log('----> releaseTag', context.payload.pull_request.head.ref.replace('/', '-'));
   core_14('branch', context.payload.pull_request.head.ref);
   core_14('releaseTag', context.payload.pull_request.head.ref.replace('/', '-'));
 }());
