@@ -31,8 +31,8 @@ jobs:
       - name: Setup NPM Registry
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         run: |
-          npm config set registry https://artifactory.infrateam.xyz/api/npm/npm/
-          echo "//artifactory.infrateam.xyz/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          npm config set registry https://artifactory.infrateam.xyz/artifactory/api/npm/npm/
+          echo "//artifactory.infrateam.xyz/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - uses: actions/checkout@v2
         if: ${{ github.event.label.name == 'platform-deps-update' }}
