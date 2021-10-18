@@ -28,18 +28,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup NPM Registry
-        if: ${{ github.event.label.name == 'platform-deps-update' }}
-        run: |
-          npm config set registry https://artifactory.infrateam.xyz/artifactory/api/npm/npm/
-          echo "//artifactory.infrateam.xyz/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      - name: npm config set registry
+        run: npm config set registry https://artifactory.infrateam.xyz/artifactory/api/npm/npm/
+      - name: set npm authToken
+        run: echo "//artifactory.infrateam.xyz/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      - name: set npm new authToken
+        run: echo "//artifactory.infrateam.xyz/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - uses: actions/checkout@v2
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         with:
           ref: ${{ steps.extract_branch.outputs.branch }}
 
-      - name: Install Dependencies
+      - name: Install dependencies
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         run: yarn install --frozen-lockfile --silent
 
@@ -51,4 +52,3 @@ jobs:
           npx asp update ${{ steps.extract_branch.outputs.releaseTag }}
           git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
           git push
-
