@@ -11,14 +11,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set git user
-        if: ${{ github.event.label.name == 'platform-deps-update' }}
-        uses: fregante/setup-git-user@v1
+        with:
+          token: ${{ secrets.APP_GITHUB_TOKEN }}
 
       - uses: actions-ecosystem/action-remove-labels@v1
         name: Delete pull request label
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.APP_GITHUB_TOKEN }}
           labels: platform-deps-update
 
       - uses: ./.github/actions/platform-deps-update
@@ -26,29 +25,32 @@ jobs:
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         id: extract_branch
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.APP_GITHUB_TOKEN }}
 
-      - name: npm config set registry
-        run: npm config set registry https://artifactory.infrateam.xyz/artifactory/api/npm/npm/
-      - name: set npm authToken
-        run: echo "//artifactory.infrateam.xyz/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-      - name: set npm new authToken
-        run: echo "//artifactory.infrateam.xyz/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      - name: Setup registry
+        run: |
+          npm config set registry https://artifactory.infrateam.xyz/artifactory/api/npm/npm/
+          npm config set always-auth true
+          echo "//artifactory.infrateam.xyz/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          echo "//artifactory.infrateam.xyz/artifactory/api/npm/npm/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
       - uses: actions/checkout@v2
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         with:
+          token: ${{ secrets.APP_GITHUB_TOKEN }}
           ref: ${{ steps.extract_branch.outputs.branch }}
 
       - name: Install dependencies
         if: ${{ github.event.label.name == 'platform-deps-update' }}
-        run: yarn install --frozen-lockfile --silent
+        run: yarn install --ignore-engines --frozen-lockfile --ignore-optional
 
       - name: Update front-platform deps
         if: ${{ github.event.label.name == 'platform-deps-update' }}
         env:
-          GITHUB_GLOBAL_TOKEN: ${{ secrets.GLOBAL_TOKEN }}
+          GITHUB_GLOBAL_TOKEN: ${{ secrets.APP_GITHUB_TOKEN }}
         run: |
           npx asp update ${{ steps.extract_branch.outputs.releaseTag }}
+          git config --global user.name 'platform-deps-update'
+          git config --global user.email 'platform-deps-update@airslate.com'
           git diff --quiet && git diff --staged --quiet || git commit -a -m 'update deps'
           git push
