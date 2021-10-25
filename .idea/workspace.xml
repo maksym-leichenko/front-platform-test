@@ -42,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release/arel-00" />
+        <entry key="$PROJECT_DIR$" value="release/arel-11" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1633507243942</updated>
       <workItem from="1633507245261" duration="139000" />
-      <workItem from="1633940518193" duration="1857000" />
+      <workItem from="1633940518193" duration="7360000" />
+      <workItem from="1635150266129" duration="645000" />
     </task>
     <servers />
   </component>
