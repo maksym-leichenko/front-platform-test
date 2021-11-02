@@ -31,7 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c24ed5c0-3967-47f9-bf3a-a072e216b85f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/platform-deps-update.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/actions/up-to-date-branches/dist/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.github/actions/up-to-date-branches/dist/commonjs/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release/arel-11" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.github/actions/platform-deps-update/dist/commonjs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.github/actions/up-to-date-branches" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -70,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.github/actions/platform-deps-update/dist/commonjs" />
+      <recent name="$PROJECT_DIR$/.github/actions/up-to-date-branches" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
+      <recent name="$PROJECT_DIR$/.github/actions" />
+      <recent name="$PROJECT_DIR$/.github/actions/platform-deps-update/dist/commonjs" />
       <recent name="$PROJECT_DIR$/.github/actions/generateFile" />
-      <recent name="$PROJECT_DIR$/.github/actions/test" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -111,10 +111,10 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state x="530" y="330" key="MultipleFileMergeDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1633599163818" />
-    <state x="648" y="207" key="git4idea.branch.GitSmartOperationDialog" timestamp="1633599171601">
+    <state x="648" y="207" key="git4idea.branch.GitSmartOperationDialog" timestamp="1635843551633">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="648" y="207" key="git4idea.branch.GitSmartOperationDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1633599171601" />
+    <state x="648" y="207" key="git4idea.branch.GitSmartOperationDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635843551633" />
     <state x="561" y="269" width="670" height="676" key="search.everywhere.popup" timestamp="1633601079742">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
