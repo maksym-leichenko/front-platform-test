@@ -6428,15 +6428,14 @@ const getCommits = async ({ name, branch }) => {
       const [masterCommit, commitsList] = await getCommits({ name, branch });
       const isNotFound = commitsList.status === notFoundErrorCode;
 
-        console.log('commitsList', commitsList);
-        console.log('commitsList', commitsList.data);
-
-        const isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
-        owner,
-        repo,
-        commit_sha: commitsList.data[0].sha,
-      });
-
+      let isPrExist = false;
+      if (commitsList && Array.isArray(commitsList.data)) {
+          isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner,
+              repo,
+              commit_sha: commitsList.data[0].sha,
+          });
+      }
       console.log('isPrExist', isPrExist);
 
       if (!isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
