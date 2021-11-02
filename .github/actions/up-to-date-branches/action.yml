@@ -1,0 +1,9 @@
+name: 'Up To Date Packages PRs'
+description: 'Checks whether packages with git branches in package.json are up to date with their master branches.'
+inputs:
+  workspace:
+    description: 'Current workspace directory'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/commonjs/index.js'

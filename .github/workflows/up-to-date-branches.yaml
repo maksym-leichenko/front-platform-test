@@ -1,0 +1,21 @@
+name: Package branches validation
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, labeled]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: 'Runner'
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          labels: check
+      - name: Check that all repository branches are up to date
+        uses: ./.github/actions/up-to-date-branches
+        env:
+          GITHUB_GLOBAL_TOKEN: ${{ secrets.APP_GITHUB_TOKEN }}
