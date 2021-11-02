@@ -6432,7 +6432,7 @@ const getCommits = async ({ name, branch }) => {
       if (commitsList && Array.isArray(commitsList.data)) {
           isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
               owner,
-              repo,
+              repo: name,
               commit_sha: commitsList.data[0].sha,
           });
       }
