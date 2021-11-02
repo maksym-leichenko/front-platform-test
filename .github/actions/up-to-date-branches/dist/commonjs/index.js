@@ -6426,6 +6426,8 @@ const getCommits = async ({ name, branch }) => {
     for (const [name, branch] of Object.entries(generalRepos)) {
       const [masterCommit, commitsList] = await getCommits({ name, branch });
       const isNotFound = commitsList.status === notFoundErrorCode;
+        console.log('----> name', name);
+        console.log('----> branch', branch);
         console.log('----> commitsList', commitsList);
       if (!isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
         shouldUpdateRepos.push([name, branch]);
