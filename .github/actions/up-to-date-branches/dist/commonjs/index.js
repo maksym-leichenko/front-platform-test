@@ -6402,8 +6402,8 @@ ${shouldUpdateRepos.map(([name, branch]) => `https://github.com/airslateinc/${na
 };
 
 const getCommits = async ({ name, branch }) => {
-  const masterCommit = await fetchCommits(`/repos/airslateinc/${name}/commits/master`);
-  const commitsList = await fetchCommits(`/repos/airslateinc/${name}/commits?page=0&per_page=100&sha=${branch}`);
+  const masterCommit = await fetchCommits(`/repos/maksym-leichenko/${name}/commits/master`);
+  const commitsList = await fetchCommits(`/repos/maksym-leichenko/${name}/commits?page=0&per_page=100&sha=${branch}`);
   return [masterCommit, commitsList];
 };
 
