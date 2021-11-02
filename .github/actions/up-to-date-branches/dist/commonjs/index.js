@@ -3942,7 +3942,7 @@ function fetchWrapper(requestOptions) {
         body: requestOptions.body,
         headers: requestOptions.headers,
         redirect: requestOptions.redirect,
-    },
+    }, 
     // `requestOptions.request.agent` type is incompatible
     // see https://github.com/octokit/types.ts/pull/264
     requestOptions.request))
@@ -6403,10 +6403,18 @@ ${shouldUpdateRepos.map(([name, branch]) => `https://github.com/airslateinc/${na
 };
 
 const getCommits = async ({ name, branch }) => {
-  const masterCommit = await fetchCommits(`/repos/maksym-leichenko/${name}/commits/master`);
-  const commitsList = await fetchCommits(`/repos/maksym-leichenko/${name}/commits?page=0&per_page=100&sha=${branch}`);
+  const masterCommit = await fetchCommits(`/repos/airslateinc/${name}/commits/master`);
+  const commitsList = await fetchCommits(`/repos/airslateinc/${name}/commits?page=0&per_page=100&sha=${branch}`);
   return [masterCommit, commitsList];
 };
+
+const getListPullRequestsAssociatedWithCommit = ({ commitSha, name }) => (
+  octokit.rest.repos.listPullRequestsAssociatedWithCommit({
+    owner,
+    repo: name,
+    commit_sha: commitSha,
+  })
+);
 
 (async function run() {
   try {
@@ -6428,17 +6436,16 @@ const getCommits = async ({ name, branch }) => {
       const [masterCommit, commitsList] = await getCommits({ name, branch });
       const isNotFound = commitsList.status === notFoundErrorCode;
 
-      let isPrExist = false;
+      let isAllPrClosed = {};
       if (commitsList && Array.isArray(commitsList.data)) {
-          isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
-              owner,
-              repo: name,
-              commit_sha: commitsList.data[0].sha,
-          });
+        isAllPrClosed = await getListPullRequestsAssociatedWithCommit({
+          name,
+          commitSha: commitsList.data[0].sha,
+        }).then(({ data }) => data.every(({ state }) => state === 'closed'));
       }
-      console.log('isPrExist', isPrExist);
 
-      if (!isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
+      // we will not check the general.json repos if they are not have a PR.
+      if (isAllPrClosed && !isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
         shouldUpdateRepos.push([name, branch]);
       }
     }
