@@ -3942,7 +3942,7 @@ function fetchWrapper(requestOptions) {
         body: requestOptions.body,
         headers: requestOptions.headers,
         redirect: requestOptions.redirect,
-    },
+    }, 
     // `requestOptions.request.agent` type is incompatible
     // see https://github.com/octokit/types.ts/pull/264
     requestOptions.request))
@@ -6335,6 +6335,7 @@ const cwd = process.env.GITHUB_WORKSPACE;
 const prNumber = process.env.GITHUB_REF.split('/')[2];
 
 const octokit = github_1(token);
+const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
 
 const getJsonFromFile = (filePath) => {
   try {
@@ -6402,8 +6403,8 @@ ${shouldUpdateRepos.map(([name, branch]) => `https://github.com/airslateinc/${na
 };
 
 const getCommits = async ({ name, branch }) => {
-  const masterCommit = await fetchCommits(`/repos/maksym-leichenko/${name}/commits/master`);
-  const commitsList = await fetchCommits(`/repos/maksym-leichenko/${name}/commits?page=0&per_page=100&sha=${branch}`);
+  const masterCommit = await fetchCommits(`/repos/airslateinc/${name}/commits/master`);
+  const commitsList = await fetchCommits(`/repos/airslateinc/${name}/commits?page=0&per_page=100&sha=${branch}`);
   return [masterCommit, commitsList];
 };
 
@@ -6426,9 +6427,16 @@ const getCommits = async ({ name, branch }) => {
     for (const [name, branch] of Object.entries(generalRepos)) {
       const [masterCommit, commitsList] = await getCommits({ name, branch });
       const isNotFound = commitsList.status === notFoundErrorCode;
-        console.log('----> name', name);
-        console.log('----> branch', branch);
-        console.log('----> commitsList', commitsList);
+
+      const isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
+        owner,
+        repo,
+        commit_sha: commitsList.data[0].sha,
+      });
+
+      console.log('isPrExist', isPrExist);
+      console.log('commitsList', commitsList);
+
       if (!isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
         shouldUpdateRepos.push([name, branch]);
       }
