@@ -3942,7 +3942,7 @@ function fetchWrapper(requestOptions) {
         body: requestOptions.body,
         headers: requestOptions.headers,
         redirect: requestOptions.redirect,
-    }, 
+    },
     // `requestOptions.request.agent` type is incompatible
     // see https://github.com/octokit/types.ts/pull/264
     requestOptions.request))
@@ -6428,14 +6428,16 @@ const getCommits = async ({ name, branch }) => {
       const [masterCommit, commitsList] = await getCommits({ name, branch });
       const isNotFound = commitsList.status === notFoundErrorCode;
 
-      const isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
+        console.log('commitsList', commitsList);
+        console.log('commitsList', commitsList.data);
+
+        const isPrExist = await octokit.rest.repos.listPullRequestsAssociatedWithCommit({
         owner,
         repo,
         commit_sha: commitsList.data[0].sha,
       });
 
       console.log('isPrExist', isPrExist);
-      console.log('commitsList', commitsList);
 
       if (!isNotFound && !findCommitInList(masterCommit.data, commitsList.data)) {
         shouldUpdateRepos.push([name, branch]);
